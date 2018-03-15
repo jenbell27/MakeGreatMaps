@@ -37,48 +37,25 @@ When (change > 0, "Gain", change < 0, "Loss", null)
 ```
 
 ## Expression Template
+The first attribute classifies each geometry as either an increase or decrease. This is symbolized by color and/or symbols. 
 
 ```js
+//Create variable change that calculates the difference between the most recent year (year 1) and year 2.
+var change = $feature.FIELD_NAME_YEAR1-$feature.FIELD_NAME_YEAR2
 
-// The fields from which to calculate predominance.
-// The `value` property must reference a field global variable
-// OR an arcade expression that returns a number
-// Replace the field names and aliases in ALL CAPS with
-// the competing fields in your layer
+//When the change or difference is greater than zero, this will be categorized as an increase, but when the change
+is less than zero, it will be categorized as a decrease. Optionally, you can change null to "No Change". 
+When (change > 0, "DESCRIBE INCREASE", change < 0, "DESCRIBE DECREASE", null)
+```
+The second attribute visualizes the numeric change over time by size of the symbol. 
+```js
+//Use the absolute value function to calculate the difference between the most recent year (year 1) and year 2.
+Abs($feature.FIELD_NAME_YEAR1-$feature.FIELD_NAME_YEAR2)
 
-var fields = [
-  { value: $feature.FIELD_NAME_1, alias: "DESCRIBE FIELD_NAME_1 HERE" },
-  { value: $feature.FIELD_NAME_2, alias: "DESCRIBE FIELD_NAME_2 HERE" },
-
-  // e.g. { value: $feature.REPUB_VOTES, alias: "Republican Candidate" }
-  // ADD MORE FIELDS AS NECESSARY
-];
-
-// Returns the predominant category as the alias
-// defined in the fields array. If there is a tie,
-// then both names are concatenated and used to
-// indicate the tie
-
-function getPredominantCategory(fieldsArray){
-  var maxValue = -Infinity;
-  var maxCategory = "";
-  for(var k in fieldsArray){
-    if(fieldsArray[k].value > maxValue){
-      maxValue = fieldsArray[k].value;
-      maxCategory = fieldsArray[k].alias;
-    } else if (fieldsArray[k].value == maxValue){
-      maxCategory = maxCategory + "/" + fieldsArray[k].alias;
-    }
-  }
-  // totals should exceed zero in predominance visualizations
-  return IIF(maxValue <= 0, "none", maxCategory);
-}
-
-getPredominantCategory(fields);
 ```
 
 ## Example output
 
-See [this webmap](https://jsapi.maps.arcgis.com/home/webmap/viewer.html?webmap=c453bcc6ab154f8ab7cf7acbeba2ce53) for examples of how to use this expression in ArcGIS Online.
+See [this webmap](http://urbanobservatory.maps.arcgis.com/home/webmap/viewer.html?webmap=c81328482ced43a4ab455c0d7563d0f4 for examples of how to use this expression in ArcGIS Online.
 
-[![predominance](./images/predominance.png)](https://jsapi.maps.arcgis.com/home/webmap/viewer.html?webmap=c453bcc6ab154f8ab7cf7acbeba2ce53)
+[![predominance](./images/predominance.png)](https://jsapi.maps.arcgis.com/home/webmap/viewer.html?webmap=c453bcc6ab154f8ab7cf7acbeba2ce53) 
