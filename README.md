@@ -7,9 +7,9 @@ or decreased over time.
 
 ## Use cases
 
-Calculating change over time is useful when you have two numeric fields comparing values at two differen times, and you would like to 
-indicate the change among the fields. This is common in the visualization profile, 
-but it may be used in the popup and labeling profiles as well. This could be used to visualize change in population over time or change in forest area for example.
+Calculating change over time is useful when you have two numeric fields comparing values at two different times, and you would like to 
+indicate the change between the fields. This is common in the visualization profile, 
+but it may be used in the popup profiles as well. This could be used to visualize change in population over time or change in forest area for example.
 
 ## Workflow
 
@@ -43,8 +43,8 @@ The first attribute classifies each geometry as either an increase or decrease. 
 //Create variable change that calculates the difference between the most recent year (year 1) and year 2.
 var change = $feature.FIELD_NAME_YEAR1-$feature.FIELD_NAME_YEAR2
 
-//When the change or difference is greater than zero, this will be categorized as an increase, but when the change
-is less than zero, it will be categorized as a decrease. Optionally, you can change null to "No Change". 
+//When the change or difference is greater than zero, this will be categorized as an increase, 
+//but when the change is less than zero, it will be categorized as a decrease. Optionally, you can change null to "No Change". 
 When (change > 0, "DESCRIBE INCREASE", change < 0, "DESCRIBE DECREASE", null)
 ```
 The second attribute visualizes the numeric change over time by size of the symbol. 
