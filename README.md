@@ -56,6 +56,6 @@ Abs($feature.FIELD_NAME_YEAR1-$feature.FIELD_NAME_YEAR2)
 
 ## Example output
 
-See [this webmap](http://urbanobservatory.maps.arcgis.com/home/webmap/viewer.html?webmap=c81328482ced43a4ab455c0d7563d0f4 for examples of how to use this expression in ArcGIS Online.
+See [this webmap](http://urbanobservatory.maps.arcgis.com/home/webmap/viewer.html?webmap=c81328482ced43a4ab455c0d7563d0f4) for examples of how to use this expression in ArcGIS Online.
 
-[![predominance](./images/predominance.png)](https://jsapi.maps.arcgis.com/home/webmap/viewer.html?webmap=c453bcc6ab154f8ab7cf7acbeba2ce53) 
+![Change Over Time](https://i.imgur.com/ODwUqwR.png)
