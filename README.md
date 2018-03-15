@@ -17,31 +17,23 @@ Copy and paste the expression found in the expression template below to
 the Arcade editor in ArcGIS Online, the relevant location in ArcGIS Pro, or
 the relevant location in a custom app.
 
-To configure the script to your layer, you must construct an array of objects 
-referring to competing **number** field values. Then 
-describe the field using the text of the `alias` property.
+To configure the script to your layer, you must fill in the two field names that represent each year. Modify the alias
+with language that represents change (e.g., gain vs. loss, increase vs. decrease, growth vs. decline, etc.)
 
-For example, in a layer representing U.S. counties containing voting data from the 2016 U.S. 
-presidential election, you would replace this:
+For example, in a layer representing forest area by country containing area in 2015 and 1990, you would replace this:
 
 ```js
-var fields = [
-  { value: $feature.FIELD_NAME_1, alias: "DESCRIBE FIELD_NAME_1 HERE" },
-  { value: $feature.FIELD_NAME_2, alias: "DESCRIBE FIELD_NAME_2 HERE" },
+var change = $feature.FIELD_NAME_YEAR1-$feature.FIELD_NAME_YEAR2
 
-  // e.g. { value: $feature.REPUB_VOTES, alias: "Republican Candidate" }
-  // ADD MORE FIELDS AS NECESSARY
-];
+When (change > 0, "DESCRIBE INCREASE", change < 0, "DESCRIBE DECREASE", null)
 ```
 
 With something like the following:
 
 ```js
-var fields = [
-  { value: $feature.REPUBLICAN_VOTES, alias: "Trump" },
-  { value: $feature.DEMOCRAT_VOTES, alias: "Clinton" },
-  { value: $feature.OTHER_VOTES, alias: "Other" }
-];
+var change = $feature.F2015-$feature.F1990
+
+When (change > 0, "Gain", change < 0, "Loss", null)
 ```
 
 ## Expression Template
