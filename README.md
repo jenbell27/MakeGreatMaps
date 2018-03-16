@@ -25,10 +25,9 @@ With something like the following:
 ```js
 $feature.DepthInMeters*3.28
 ```
-To convert meters to feet, multiply meters by 3.28.
 
 ## Expression Template
-The first attribute classifies each geometry as either an increase or decrease. This is symbolized by color and/or symbols. 
+The expression you implement depends on the type of conversion that you would like to perform. The example below multiplies meters by 3.28 to obtain the measurement in feet. 
 
 ```js
 \\Multiply meters by 3.28 to convert to feet.
