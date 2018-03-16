@@ -1,10 +1,10 @@
 # Unit Conversion
 
-This expression converts one unit of measurement to another. For example, if a layer contains a measurement field in meters, we can use Arcade expressions to convert the number to feet.
+This expression converts one unit of measurement to another. For example, if a layer contains a measurement field in meters, we can use Arcade expressions to convert the value to feet.
 
 ## Use cases
 
-Converting units is useful when you have one numeric field that you'd like to represent with another unit of measurement. This is common in the visualization profile as well as the popup profile. This could be used to visualize the depth of the ocean at different contours in meters or feet. 
+Converting units is useful when you have one numeric field that you'd like to represent with another unit of measurement. This is common in the visualization profile as well as the popup profile. This could be used to visualize the depth of the ocean at different contours in meters or in feet. 
 
 ## Workflow
 
