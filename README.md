@@ -36,6 +36,6 @@ $feature.DepthInMeters*3.28
 
 ## Example output
 
-See [this webmap](http://urbanobservatory.maps.arcgis.com/home/webmap/viewer.html?webmap=6211aae5a03148c4b646376e21afef76) for examples of how to use this expression in ArcGIS Online. 
+See [this webmap](http://urbanobservatory.maps.arcgis.com/home/webmap/viewer.html?webmap=6211aae5a03148c4b646376e21afef76) for examples of how to use this expression for both visualization and popups in ArcGIS Online. 
 
 ![Change Over Time](https://i.imgur.com/59i8SbD.png)
