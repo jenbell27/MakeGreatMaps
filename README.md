@@ -37,6 +37,6 @@ $feature.DepthInMeters*3.28
 
 ## Example output
 
-See [this webmap](http://urbanobservatory.maps.arcgis.com/home/webmap/viewer.html?webmap=6211aae5a03148c4b646376e21afef76) for examples of how to use this expression in ArcGIS Online. Red trees represent a loss in forest area while green trees represent a growth. The larger the symbol the greater the loss or growth.
+See [this webmap](http://urbanobservatory.maps.arcgis.com/home/webmap/viewer.html?webmap=6211aae5a03148c4b646376e21afef76) for examples of how to use this expression in ArcGIS Online. 
 
 ![Change Over Time](https://i.imgur.com/59i8SbD.png)
